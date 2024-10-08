@@ -10,11 +10,12 @@ build:
 
 .PHONY: deps-init deps-get
 deps-init:
-	@go get -u github.com/kardianos/govendor
-	$(GOPATH)/bin/govendor init
+	-go mod init
+	go mod tidy
 
 deps-get: deps-init
-	@$(GOPATH)/bin/govendor get github.com/lovoo/nsq_exporter
+	go get -u ./...
+	go mod tidy
 
 .PHONY: clean
 clean:
@@ -27,4 +28,4 @@ test:
 .PHONY: release-build
 release-build:
 	@go get -u github.com/mitchellh/gox
-	@$(GOX) $(GOX_ARGS) github.com/lovoo/nsq_exporter
+	@$(GOX) $(GOX_ARGS) github.com/CodeFish-xiao/nsq_exporter

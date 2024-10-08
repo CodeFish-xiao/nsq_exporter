@@ -1,6 +1,6 @@
 language: go
 go:
-  - 1.7
+  - 1.23.1
 
 script:
   - make build
@@ -23,5 +23,5 @@ deploy:
     - build/nsq_exporter_windows_386.exe
     - build/nsq_exporter_windows_amd64.exe
   on:
-    repo: lovoo/nsq_exporter
+    repo: codefish/nsq_exporter
     tags: true

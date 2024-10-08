@@ -18,4 +18,4 @@ NSQ exporter for prometheus.io, written in go.
 
 ## 来源
 
-[NSQ Exporter](
+[NSQ Exporter](https://github.com/lovoo/nsq_exporter)
